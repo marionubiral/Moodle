@@ -242,7 +242,9 @@ set -ex
         # install Office 365 plugins
         curl -k --max-redirs 10 https://raw.githubusercontent.com/marionubiral/Moodle/master/local_o365_moodle38_2020020306.zip -L -o o365.zip
         unzip -q o365.zip
-        mv o365/* /moodle/html/moodle
+	cp -r o365/* /moodle/html/moodle
+        rm -rf o365
+
     fi
 
     if [ "'$searchType'" = "elastic" ]; then
